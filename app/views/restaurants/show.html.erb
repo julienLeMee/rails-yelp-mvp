@@ -1,0 +1,9 @@
+ <h2 class="m-5"><%=@restaurant.name %></h2>
+ <h3 class="m-3"><%=@restaurant.address %></h3>
+ <h4 class="m-3"><%=@restaurant.category %></h4>
+ <h4 class="m-3"><%=@restaurant.phone_number %></h4>
+
+<div class="m-3">
+  <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %> |
+  <%= link_to "Back to restaurants", restaurants_path %>
+</div>
