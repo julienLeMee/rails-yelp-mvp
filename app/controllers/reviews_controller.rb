@@ -1,5 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :set_restaurant, except: :destroy
+
+  def index
+    @reviews = Review.all
+  end
+
   def new
     @review = Review.new
   end
@@ -18,7 +23,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to restaurant_path(@review.restaurant), status: :see_other, notice: "Done!"
+    redirect_to restaurant_path(@review.restaurant), status: :see_other, notice: 'Done!'
   end
 
   private
