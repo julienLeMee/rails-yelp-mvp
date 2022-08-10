@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_restaurant, except: :destroy
+  before_action :set_restaurant
 
   def index
     @reviews = Review.all
@@ -18,12 +18,6 @@ class ReviewsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    @review = Review.find(params[:id])
-    @review.destroy
-    redirect_to restaurant_path(@review.restaurant), status: :see_other, notice: 'Done!'
   end
 
   private
